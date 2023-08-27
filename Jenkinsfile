@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'echo "IM IN"'
+                echo "IM IN"
             }
         }
     }
