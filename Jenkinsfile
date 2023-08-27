@@ -4,9 +4,11 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                timeout(time: 1, unit: "SECONDS"){
-                    for(int i=0; i<100; i++){
-                        echo "IM IN"
+                script{
+                    timeout(time: 1, unit: "SECONDS"){
+                        for(int i=0; i<100; i++){
+                            echo "IM IN"
+                        }
                     }
                 }
             }
