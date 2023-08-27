@@ -5,8 +5,8 @@ pipeline {
         stage('build') {
             steps {
                 timeout(time: 1, unit: "SECONDS"){
-                    retry(3){
-                        bat 'echo "IM IN"'
+                    for(int i=0; i<100; i++){
+                        echo "IM IN"
                     }
                 }
             }
