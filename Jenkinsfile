@@ -4,8 +4,22 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                bat 'echo "IM IN"'
+                timeout(time: 1, unit: "SECONDS"){
+                    retry(3){
+                        bat 'echo "IM IN"'
+                    }
+                }
             }
+        }
+    }
+
+    post{
+        success{
+            echo "Getting there"
+        }
+
+        failure{
+            echo "Try again"
         }
     }
 }
