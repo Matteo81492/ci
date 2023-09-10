@@ -17,6 +17,7 @@ pipeline {
       steps {
         echo 'In the Deploy stage'
         sleep 10
+	bat 'call simple_script.bat'
       }
     }
 
